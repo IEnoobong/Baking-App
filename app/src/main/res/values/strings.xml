@@ -1,0 +1,47 @@
+<!--
+  ~ Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur in transit)
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Baking App</string>
+    <string name="title_activity_ingredient_step">Recipe Name</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="error_no_internet">Something terrible happened, Please check your internet connection</string>
+    <string name="recipe_ingredients">Recipe Ingredients</string>
+    <string name="demo_desc"><![CDATA[2. Whisk the graham cracker crumbs, 50 grams (&#188; cup) of sugar, and &#189; teaspoon of salt together in a medium bowl. Pour the melted butter and 1 teaspoon of vanilla into the dry ingredients and stir together until evenly mixed.]]></string>
+    <string name="ingredient">Ingredient</string>
+    <string name="measure">Measure</string>
+    <string name="quantity">Quantity</string>
+    <string name="end_of_steps">You\'ve reach the end of the tutorial! Enjoy</string>
+    <string name="start_of_steps">Back to the beginning! Ready to learn?</string>
+    <string name="pause">pause</string>
+    <string name="play">play</string>
+    <string name="restart">restart</string>
+    <string name="error_drm_not_supported">Protected content not supported on API levels below 18</string>
+
+    <string name="error_drm_unsupported_scheme">This device does not support the required DRM scheme</string>
+
+    <string name="error_drm_unknown">An unknown DRM error occurred</string>
+
+    <string name="error_no_decoder">This device does not provide a decoder for <xliff:g id="mime_type">%1$s</xliff:g></string>
+
+    <string name="error_no_secure_decoder">This device does not provide a secure decoder for <xliff:g id="mime_type">%1$s</xliff:g></string>
+
+    <string name="error_querying_decoders">Unable to query device decoders</string>
+
+    <string name="error_instantiating_decoder">Unable to instantiate decoder <xliff:g id="decoder_name">%1$s</xliff:g></string>
+
+    <string name="error_unsupported_video">Media includes video tracks, but none are playable by this device</string>
+
+    <string name="error_unsupported_audio">Media includes audio tracks, but none are playable by this device</string>
+
+    <string name="storage_permission_denied">Permission to access storage was denied</string>
+
+    <string name="sample_list_load_error">One or more sample lists failed to load</string>
+    <string name="action_favorite">add to favorite</string>
+    <string name="add_widget">Add widget</string>
+    <string name="empty_recipe_list">No Favorite Recipe Selected</string>
+    <string name="favorite_added_message">%s has been added as your favorite recipe!</string>
+    <string name="favorite_removed_message">%s has been removed as your favorite recipe</string>
+</resources>

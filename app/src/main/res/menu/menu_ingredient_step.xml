@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur in transit)
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="co.enoobong.bakingapp.ui.IngredientStepActivity">
+    <item
+        android:id="@+id/action_favorite"
+        android:icon="@drawable/ic_favorite"
+        android:orderInCategory="1"
+        android:title="@string/action_favorite"
+        app:showAsAction="always" />
+</menu>

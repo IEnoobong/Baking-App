@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur in transit)
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    tools:context="co.enoobong.bakingapp.ui.IngredientStepActivity">
+
+    <fragment
+        android:id="@+id/master_list_fragment"
+        android:name="co.enoobong.bakingapp.ui.MasterListFragment"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_master_list" />
+
+    <!-- A small divider -->
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray" />
+
+    <LinearLayout
+        android:id="@+id/detail_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/margin">
+
+        <FrameLayout
+            android:id="@+id/step_ingredient_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_ingredient_step_detail" />
+
+    </LinearLayout>
+
+</LinearLayout>
