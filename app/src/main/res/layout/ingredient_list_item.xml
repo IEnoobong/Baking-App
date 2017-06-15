@@ -7,18 +7,17 @@
     android:id="@+id/ingredient_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/margin"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="@dimen/margin">
 
     <TextView
         android:id="@+id/tv_ingredient"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:gravity="start"
-        android:textColor="@android:color/black"
+        android:gravity="center_horizontal"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black"
         tools:text="cream cheese(softened)" />
 
     <TextView
@@ -27,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center_horizontal"
-        android:textColor="@android:color/black"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black"
         android:textStyle="bold"
         tools:text="0Z" />
 
@@ -38,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center_horizontal"
-        android:textColor="@android:color/black"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/black"
         android:textStyle="bold"
         tools:text="4" />
 

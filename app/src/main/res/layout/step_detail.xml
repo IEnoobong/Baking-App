@@ -2,62 +2,61 @@
   ~ Copyright (c) 2017. Ibanga Enoobong Ime (World class developer and entrepreneur in transit)
   -->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/margin"
-    android:background="@android:color/white"
-    android:keepScreenOn="true">
 
-    <RelativeLayout
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:keepScreenOn="true">
+        android:background="@android:color/white"
+        android:keepScreenOn="true"
+        android:orientation="vertical">
 
         <com.google.android.exoplayer2.ui.SimpleExoPlayerView
             android:id="@+id/sepv_step_video"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="0dp"
-            android:keepScreenOn="true" />
+            android:layout_height="250dp"
+            app:resize_mode="fixed_width" />
 
         <ImageView
             android:id="@+id/iv_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sepv_step_video"
+            android:contentDescription="@string/recipe_thumbnail"
             android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sepv_step_video"
             android:layout_marginTop="@dimen/margin"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="@string/demo_desc" />
 
-        <Button
-            android:id="@+id/bt_previous"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/tv_description"
-            android:text="@string/previous" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/bt_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@id/tv_description"
-            android:text="@string/next" />
-    </RelativeLayout>
+            <Button
+                android:id="@+id/bt_previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/previous" />
+
+            <Button
+                android:id="@+id/bt_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/next" />
+        </LinearLayout>
+
+    </LinearLayout>
 </ScrollView>
+

@@ -10,14 +10,11 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.database.ContentObserver;
 import android.support.v4.app.TaskStackBuilder;
 import android.widget.RemoteViews;
 
 import co.enoobong.bakingapp.R;
 import co.enoobong.bakingapp.data.RecipeProvider;
-
-import static co.enoobong.bakingapp.data.RecipeContract.RECIPE_CONTENT_URI;
 
 /**
  * Implementation of App Widget functionality.

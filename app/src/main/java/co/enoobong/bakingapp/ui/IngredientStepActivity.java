@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import co.enoobong.bakingapp.R;
 import co.enoobong.bakingapp.data.Ingredient;
 import co.enoobong.bakingapp.data.Recipe;
-import co.enoobong.bakingapp.data.RecipeContract;
 
 import static co.enoobong.bakingapp.data.RecipeContract.RECIPE_CONTENT_URI;
 import static co.enoobong.bakingapp.data.RecipeContract.RecipeEntry;
