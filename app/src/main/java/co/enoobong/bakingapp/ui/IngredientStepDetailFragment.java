@@ -4,6 +4,8 @@
 
 package co.enoobong.bakingapp.ui;
 
+import android.annotation.SuppressLint;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -147,7 +149,6 @@ public class IngredientStepDetailFragment extends Fragment implements View.OnCli
 
 
     public void showStepsForTab() {
-        //initializeMediaSession();
         mIngredientsRecyclerView.setVisibility(View.GONE);
         mStepDetail.setVisibility(View.VISIBLE);
         mPlayerView.setVisibility(View.VISIBLE);
@@ -156,7 +157,6 @@ public class IngredientStepDetailFragment extends Fragment implements View.OnCli
         assert mSteps != null;
         mDescription.setText(mSteps.get(mIndex).getDescription());
         playStepVideo(mIndex);
-
     }
 
 
@@ -174,8 +174,14 @@ public class IngredientStepDetailFragment extends Fragment implements View.OnCli
         }
     }
 
+    void isLandscape() {
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+            hideSystemUi();
+    }
+
     private void showStepsForPhone() {
         showStepsForTab();
+        isLandscape();
         mPrevious.setVisibility(View.VISIBLE);
         mNext.setVisibility(View.VISIBLE);
     }
@@ -271,9 +277,30 @@ public class IngredientStepDetailFragment extends Fragment implements View.OnCli
         }
     }
 
+    @SuppressLint("InlinedApi")
+    private void hideSystemUi() {
+        View decorView = getActivity().getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
+    }
+
+    private void showSystemUI() {
+        View decorView = getActivity().getWindow().getDecorView();
+        decorView.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        //getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
+    }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        if (mExoPlayer == null) {
+        if (mExoPlayer != null) {
             outState.putLong(PLAYBACK_POSITION, playbackPosition);
             outState.putInt(CURRENT_WINDOW_INDEX, currentWindow);
             outState.putBoolean(AUTOPLAY, autoPlay);
