@@ -45,4 +45,5 @@
     <string name="favorite_added_message">%s has been added as your favorite recipe!</string>
     <string name="favorite_removed_message">%s has been removed as your favorite recipe</string>
     <string name="recipe_thumbnail">Recipe thumbnail</string>
+    <string name="recipe_image">Recipe Image</string>
 </resources>

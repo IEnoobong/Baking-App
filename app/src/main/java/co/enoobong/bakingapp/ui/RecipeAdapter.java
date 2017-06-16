@@ -10,7 +10,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -25,8 +28,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     private Context mContext;
     private ArrayList<Recipe> mRecipes;
 
-    public RecipeAdapter(final Context mContext, ArrayList<Recipe> mRecipes) {
-        this.mContext = mContext;
+    public RecipeAdapter(final Context context, ArrayList<Recipe> mRecipes) {
+        this.mContext = context;
         this.mRecipes = mRecipes;
     }
 
@@ -40,6 +43,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
     @Override
     public void onBindViewHolder(final RecipeViewHolder holder, final int position) {
         holder.setRecipeName(mRecipes.get(position).getName());
+        holder.setRecipeImage(mContext, mRecipes.get(position).getImageUrl());
     }
 
     @Override
@@ -54,6 +58,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         @BindView(R.id.tv_recipe_name)
         TextView mRecipeName;
+        @BindView(R.id.iv_recipe_image)
+        ImageView mRecipeImage;
 
         public RecipeViewHolder(final View itemView) {
             super(itemView);
@@ -63,6 +69,15 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
 
         void setRecipeName(final String recipeName) {
             mRecipeName.setText(recipeName);
+        }
+
+        void setRecipeImage(final Context context, final String recipeImage) {
+            if (!recipeImage.isEmpty()) {
+                mRecipeImage.setVisibility(View.VISIBLE);
+                Glide.with(context)
+                        .load(recipeImage)
+                        .into(mRecipeImage);
+            }
         }
 
         @Override

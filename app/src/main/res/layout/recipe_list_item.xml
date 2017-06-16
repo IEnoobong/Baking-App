@@ -13,6 +13,13 @@
     android:foreground="?android:selectableItemBackground"
     app:cardPreventCornerOverlap="false">
 
+    <ImageView
+        android:id="@+id/iv_recipe_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/recipe_image" />
+
     <TextView
         android:id="@+id/tv_recipe_name"
         android:layout_width="match_parent"
